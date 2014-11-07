@@ -115,14 +115,14 @@ void proto_register_twamp(void)
 	/* Holder for all fields with descriptions */
 	static hf_register_info hf_twamp[] = {
 		{&twamp_seq_number, {"Sequence number", "twamp.seq_number", FT_UINT32, BASE_DEC_HEX, NULL, 0x0, NULL, HFILL}},
-		{&twamp_t0_integer, {"TImestamp 0, integer part", "twamp.t0_integer", FT_UINT32, BASE_DEC_HEX, NULL, 0x0, NULL, HFILL}},
-		{&twamp_t0_fractional, {"TImestamp 0, fractional part", "twamp.t0_fractional", FT_UINT32, BASE_DEC_HEX, NULL, 0x0, NULL, HFILL}},
+		{&twamp_t0_integer, {"Timestamp 0, integer part", "twamp.t0_integer", FT_UINT32, BASE_DEC_HEX, NULL, 0x0, NULL, HFILL}},
+		{&twamp_t0_fractional, {"Timestamp 0, fractional part", "twamp.t0_fractional", FT_UINT32, BASE_DEC_HEX, NULL, 0x0, NULL, HFILL}},
 		{&twamp_error_estimate, {"Error estimate", "twamp.error_estimate", FT_UINT16, BASE_DEC_HEX, NULL, 0x0, NULL, HFILL}},
 		{&twamp_mbz1, {"Must Be Zero", "twamp.mbz1", FT_UINT8, BASE_DEC_HEX, NULL, 0x0, NULL, HFILL}},
 		{&twamp_t1_integer, {"Timestamp 1, integer part", "twamp.t1_integer", FT_UINT32, BASE_DEC_HEX, NULL, 0x0, NULL, HFILL}},
 		{&twamp_t1_fractional, {"Timestamp 1, fractional part", "twamp.t1_fractional", FT_UINT32, BASE_DEC_HEX, NULL, 0x0, NULL, HFILL}},
 		{&twamp_sender_seq_number, {"Sender sequence number", "twamp.sender_seq_number", FT_UINT32, BASE_DEC_HEX, NULL, 0x0, NULL, HFILL}},
-		{&twamp_t2_integer, {"TImestamp 2, integer part", "twamp.t2_integer", FT_UINT32, BASE_DEC_HEX, NULL, 0x0, NULL, HFILL}},
+		{&twamp_t2_integer, {"Timestamp 2, integer part", "twamp.t2_integer", FT_UINT32, BASE_DEC_HEX, NULL, 0x0, NULL, HFILL}},
 		{&twamp_t2_fractional, {"Timestamp 2, fractional part", "twamp.t2_fractional", FT_UINT32, BASE_DEC_HEX, NULL, 0x0, NULL, HFILL}},
 		{&twamp_sender_error_estimate, {"Sender error estimate", "twamp.sender_error_estimate", FT_UINT16, BASE_DEC_HEX, NULL, 0x0, NULL, HFILL}},
 		{&twamp_mbz2, {"Must Be Zero", "twamp.mbz2", FT_UINT8, BASE_DEC_HEX, NULL, 0x0, NULL, HFILL}},
