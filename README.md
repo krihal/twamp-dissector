@@ -14,7 +14,7 @@ Email: kristofer dot hallin at gmail dot com
    I have only build this with version 1.12.
 
 2. Enter the directory build/ and from there type 'cmake
-   -DWIRESHARK_INCLUDE_DIRS=<path to the wireshark source code> ..'
+   -DWIRESHARK_INCLUDE_DIRS=\<path to the wireshark source code\> ..'
    That will generate a Makefile and other necessary files.
 
 3. From the directory build/ enter the command 'make'. This will
