@@ -2,7 +2,7 @@
 #include <epan/packet.h>
 #include <inttypes.h>
 
-#define TWAMP_PORT 5000
+#define TWAMP_PORT 4000
 
 static int proto_twamp = -1;
 static gint ett_twamp = -1;
@@ -47,8 +47,8 @@ static int dissect_twamp (tvbuff_t *tvb, packet_info *pinfo, proto_tree *tree)
 		offset += 4;
 		proto_tree_add_item (twamp_tree, twamp_error_estimate, tvb, offset, 2, ENC_LITTLE_ENDIAN);
 		offset += 2;
-		proto_tree_add_item (twamp_tree, twamp_mbz1, tvb, offset, 1, ENC_LITTLE_ENDIAN);
-		offset += 1;
+		proto_tree_add_item (twamp_tree, twamp_mbz1, tvb, offset, 2, ENC_LITTLE_ENDIAN);
+		offset += 2;
 		proto_tree_add_item (twamp_tree, twamp_t1_integer, tvb, offset, 4, ENC_LITTLE_ENDIAN);
 		offset += 4;
 		proto_tree_add_item (twamp_tree, twamp_t1_fractional, tvb, offset, 4, ENC_LITTLE_ENDIAN);
@@ -61,8 +61,8 @@ static int dissect_twamp (tvbuff_t *tvb, packet_info *pinfo, proto_tree *tree)
 		offset += 4;
 		proto_tree_add_item (twamp_tree, twamp_sender_error_estimate, tvb, offset, 2, ENC_LITTLE_ENDIAN);
 		offset += 2;
-		proto_tree_add_item (twamp_tree, twamp_mbz2, tvb, offset, 1, ENC_LITTLE_ENDIAN);
-		offset += 1;
+		proto_tree_add_item (twamp_tree, twamp_mbz2, tvb, offset, 2, ENC_LITTLE_ENDIAN);
+		offset += 2;
 		proto_tree_add_item (twamp_tree, twamp_sender_ttl, tvb, offset, 1, ENC_LITTLE_ENDIAN);
 		offset += 1;
 		proto_tree_add_item (twamp_tree, twamp_padding, tvb, offset, 1, ENC_LITTLE_ENDIAN);
