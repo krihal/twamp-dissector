@@ -1,3 +1,10 @@
+/*
+ * Wireshark dissector for TWAMP/OWAMP
+ *
+ * Written by Kristofer Hallin, 2014
+ * kristofer dot hallin at gmail dot com
+ */
+
 #include <config.h>
 #include <epan/packet.h>
 #include <inttypes.h>

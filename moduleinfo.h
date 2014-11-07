@@ -1,17 +1,19 @@
-/* Included *after* config.h, in order to re-define these macros */
+/*
+ * Wireshark dissector for TWAMP/OWAMP
+ *
+ * Written by Kristofer Hallin, 2014
+ * kristofer dot hallin at gmail dot com
+ */
 
 #ifdef PACKAGE
 #undef PACKAGE
 #endif
 
-/* Name of package */
 #define PACKAGE "twamp"
-
 
 #ifdef VERSION
 #undef VERSION
 #endif
 
-/* Version number of package */
 #define VERSION "0.0.1"
 
