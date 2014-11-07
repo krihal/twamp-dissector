@@ -135,8 +135,8 @@ void proto_register_twamp(void)
 	};
 
 	/* Register the protocol */
-	proto_twamp = proto_register_protocol("TwoWay Active Measurement Protocol", "TWAMP",
-					      "TWAMP");
+	proto_twamp = proto_register_protocol("TwoWay Active Measurement Protocol", "twamp",
+					      "twamp");
 
 	/* Register the field array */
 	proto_register_field_array (proto_twamp, hf_twamp,
