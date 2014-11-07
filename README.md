@@ -13,8 +13,9 @@ Email: kristofer dot hallin at gmail dot com
    The code can be found here: https://www.wireshark.org/download.html
    I have only build this with version 1.12.
 
-2. Enter the directory build/ and from there type 'cmake ..' That will
-   generate a Makefile and other necessary files.
+2. Enter the directory build/ and from there type 'cmake
+   -DWIRESHARK_INCLUDE_DIRS=<path to the wireshark source code> ..'
+   That will generate a Makefile and other necessary files.
 
 3. From the directory build/ enter the command 'make'. This will
    compile the code and (hopefully) create a file called "twamp.so".
