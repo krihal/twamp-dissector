@@ -54,6 +54,8 @@ static int dissect_twamp (tvbuff_t *tvb, packet_info *pinfo, proto_tree *tree)
 					  ENC_NA);
 		twamp_tree = proto_item_add_subtree (ti, ett_twamp);
 
+		col_append_str(pinfo->cinfo, COL_INFO, "Measurement packet");
+		
 		proto_tree_add_item (twamp_tree, twamp_seq_number, tvb, offset,
 				     4, ENC_LITTLE_ENDIAN);
 		offset += 4;
