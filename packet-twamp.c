@@ -9,9 +9,6 @@
 #include <epan/packet.h>
 #include <inttypes.h>
 
-/* This port is static for now, should be configurable */
-#define TWAMP_PORT 4000
-
 /* Protocol enabled flags */
 static int proto_twamp = -1;
 static gint ett_twamp = -1;
@@ -48,7 +45,7 @@ static int dissect_twamp (tvbuff_t *tvb, packet_info *pinfo, proto_tree *tree)
 		return 0;
 
 	/* Clear the column */
-	col_set_str (pinfo-> cinfo, COL_PROTOCOL, "TWAMP packet");
+	col_set_str (pinfo-> cinfo, COL_PROTOCOL, "TWAMP");
 	col_clear (pinfo->cinfo, COL_INFO);
 
 	/* Expanded view in Wireshark? Show each field in the packet */
@@ -166,7 +163,7 @@ void proto_register_twamp(void)
 	/* Register the protocol */
 	proto_twamp = proto_register_protocol(
 		"TwoWay Active Measurement Protocol",
-		"twamp",
+		"TWAMP",
 		"twamp");
 
 	/* Register the field array */
@@ -188,7 +185,7 @@ void proto_reg_handoff_twamp(void)
 	/* Create a handle */
 	twamp_handle = new_create_dissector_handle(dissect_twamp, proto_twamp);
 
-	/* Register the packet for the rule udp.port == TWAMP_PORT (4000) */
-	dissector_add_uint("udp.port", TWAMP_PORT, twamp_handle);
+	/* Register the packet */
+	dissector_add_handle("udp.port", twamp_handle);
 }
 
