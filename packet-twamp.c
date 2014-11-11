@@ -15,15 +15,15 @@ static gint ett_twamp = -1;
 
 /* Packet fields */
 static int twamp_seq_number = -1;
-static int twamp_t0_integer = -1;
-static int twamp_t0_fractional = -1;
+static int twamp_t2_integer = -1;
+static int twamp_t2_fractional = -1;
 static int twamp_error_estimate = -1;
 static int twamp_mbz1 = -1;
 static int twamp_t1_integer = -1;
 static int twamp_t1_fractional = -1;
 static int twamp_sender_seq_number = -1;
-static int twamp_t2_integer = -1;
-static int twamp_t2_fractional = -1;
+static int twamp_t0_integer = -1;
+static int twamp_t0_fractional = -1;
 static int twamp_sender_error_estimate = -1;
 static int twamp_mbz2 = -1;
 static int twamp_sender_ttl = -1;
@@ -59,10 +59,10 @@ static int dissect_twamp (tvbuff_t *tvb, packet_info *pinfo, proto_tree *tree)
 		proto_tree_add_item (twamp_tree, twamp_seq_number, tvb, offset,
 				     4, ENC_LITTLE_ENDIAN);
 		offset += 4;
-		proto_tree_add_item (twamp_tree, twamp_t0_integer, tvb, offset,
+		proto_tree_add_item (twamp_tree, twamp_t2_integer, tvb, offset,
 				     4, ENC_LITTLE_ENDIAN);
 		offset += 4;
-		proto_tree_add_item (twamp_tree, twamp_t0_fractional, tvb,
+		proto_tree_add_item (twamp_tree, twamp_t2_fractional, tvb,
 				     offset, 4, ENC_LITTLE_ENDIAN);
 		offset += 4;
 		proto_tree_add_item (twamp_tree, twamp_error_estimate, tvb,
@@ -80,10 +80,10 @@ static int dissect_twamp (tvbuff_t *tvb, packet_info *pinfo, proto_tree *tree)
 		proto_tree_add_item (twamp_tree, twamp_sender_seq_number,
 				     tvb, offset, 4, ENC_LITTLE_ENDIAN);
 		offset += 4;
-		proto_tree_add_item (twamp_tree, twamp_t2_integer, tvb, offset,
+		proto_tree_add_item (twamp_tree, twamp_t0_integer, tvb, offset,
 				     4, ENC_LITTLE_ENDIAN);
 		offset += 4;
-		proto_tree_add_item (twamp_tree, twamp_t2_fractional, tvb,
+		proto_tree_add_item (twamp_tree, twamp_t0_fractional, tvb,
 				     offset, 4, ENC_LITTLE_ENDIAN);
 		offset += 4;
 		proto_tree_add_item (twamp_tree, twamp_sender_error_estimate,
@@ -117,11 +117,11 @@ void proto_register_twamp(void)
 		{&twamp_seq_number,
 		 {"Sequence number", "twamp.seq_number", FT_UINT32,
 		  BASE_DEC_HEX, NULL, 0x0, NULL, HFILL}},
-		{&twamp_t0_integer,
-		 {"Timestamp 0, integer part", "twamp.t0_integer", FT_UINT32,
+		{&twamp_t2_integer,
+		 {"Timestamp 2, integer part", "twamp.t2_integer", FT_UINT32,
 		  BASE_DEC_HEX, NULL, 0x0, NULL, HFILL}},
-		{&twamp_t0_fractional,
-		 {"Timestamp 0, fractional part", "twamp.t0_fractional",
+		{&twamp_t2_fractional,
+		 {"Timestamp 2, fractional part", "twamp.t2_fractional",
 		  FT_UINT32, BASE_DEC_HEX, NULL, 0x0, NULL, HFILL}},
 		{&twamp_error_estimate,
 		 {"Error estimate", "twamp.error_estimate", FT_UINT16,
@@ -138,11 +138,11 @@ void proto_register_twamp(void)
 		{&twamp_sender_seq_number,
 		 {"Sender sequence number", "twamp.sender_seq_number",
 		  FT_UINT32, BASE_DEC_HEX, NULL, 0x0, NULL, HFILL}},
-		{&twamp_t2_integer,
-		 {"Timestamp 2, integer part", "twamp.t2_integer", FT_UINT32,
+		{&twamp_t0_integer,
+		 {"Timestamp 0, integer part", "twamp.t0_integer", FT_UINT32,
 		  BASE_DEC_HEX, NULL, 0x0, NULL, HFILL}},
-		{&twamp_t2_fractional,
-		 {"Timestamp 2, fractional part", "twamp.t2_fractional",
+		{&twamp_t0_fractional,
+		 {"Timestamp 0, fractional part", "twamp.t0_fractional",
 		  FT_UINT32, BASE_DEC_HEX, NULL, 0x0, NULL, HFILL}},
 		{&twamp_sender_error_estimate,
 		 {"Sender error estimate", "twamp.sender_error_estimate",
