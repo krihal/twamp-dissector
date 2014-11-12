@@ -13,7 +13,7 @@ Email: kristofer dot hallin at gmail dot com
    The code can be found here: https://www.wireshark.org/download.html
    I have only build this with version 1.12.
 
-2. Enter the directory build/ and from there type 'cmake
+2. Create and enter the directory build/ and from there type 'cmake
    -DWIRESHARK_INCLUDE_DIRS=\<path to the wireshark source code\> ..'
    That will generate a Makefile and other necessary files.
 
