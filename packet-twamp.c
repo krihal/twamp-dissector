@@ -57,46 +57,46 @@ static int dissect_twamp (tvbuff_t *tvb, packet_info *pinfo, proto_tree *tree)
 		col_append_str(pinfo->cinfo, COL_INFO, "Measurement packet");
 		
 		proto_tree_add_item (twamp_tree, twamp_seq_number, tvb, offset,
-				     4, ENC_LITTLE_ENDIAN);
+				     4, ENC_BIG_ENDIAN);
 		offset += 4;
 		proto_tree_add_item (twamp_tree, twamp_t2_integer, tvb, offset,
-				     4, ENC_LITTLE_ENDIAN);
+				     4, ENC_BIG_ENDIAN);
 		offset += 4;
 		proto_tree_add_item (twamp_tree, twamp_t2_fractional, tvb,
-				     offset, 4, ENC_LITTLE_ENDIAN);
+				     offset, 4, ENC_BIG_ENDIAN);
 		offset += 4;
 		proto_tree_add_item (twamp_tree, twamp_error_estimate, tvb,
-				     offset, 2, ENC_LITTLE_ENDIAN);
+				     offset, 2, ENC_BIG_ENDIAN);
 		offset += 2;
 		proto_tree_add_item (twamp_tree, twamp_mbz1, tvb, offset,
-				     2, ENC_LITTLE_ENDIAN);
+				     2, ENC_BIG_ENDIAN);
 		offset += 2;
 		proto_tree_add_item (twamp_tree, twamp_t1_integer, tvb, offset,
-				     4, ENC_LITTLE_ENDIAN);
+				     4, ENC_BIG_ENDIAN);
 		offset += 4;
 		proto_tree_add_item (twamp_tree, twamp_t1_fractional, tvb,
-				     offset, 4, ENC_LITTLE_ENDIAN);
+				     offset, 4, ENC_BIG_ENDIAN);
 		offset += 4;
 		proto_tree_add_item (twamp_tree, twamp_sender_seq_number,
-				     tvb, offset, 4, ENC_LITTLE_ENDIAN);
+				     tvb, offset, 4, ENC_BIG_ENDIAN);
 		offset += 4;
 		proto_tree_add_item (twamp_tree, twamp_t0_integer, tvb, offset,
-				     4, ENC_LITTLE_ENDIAN);
+				     4, ENC_BIG_ENDIAN);
 		offset += 4;
 		proto_tree_add_item (twamp_tree, twamp_t0_fractional, tvb,
-				     offset, 4, ENC_LITTLE_ENDIAN);
+				     offset, 4, ENC_BIG_ENDIAN);
 		offset += 4;
 		proto_tree_add_item (twamp_tree, twamp_sender_error_estimate,
-				     tvb, offset, 2, ENC_LITTLE_ENDIAN);
+				     tvb, offset, 2, ENC_BIG_ENDIAN);
 		offset += 2;
 		proto_tree_add_item (twamp_tree, twamp_mbz2, tvb, offset,
-				     2, ENC_LITTLE_ENDIAN);
+				     2, ENC_BIG_ENDIAN);
 		offset += 2;
 		proto_tree_add_item (twamp_tree, twamp_sender_ttl, tvb, offset,
-				     1, ENC_LITTLE_ENDIAN);
+				     1, ENC_BIG_ENDIAN);
 		offset += 1;
 		proto_tree_add_item (twamp_tree, twamp_padding, tvb, offset,
-				     1, ENC_LITTLE_ENDIAN);
+				     1, ENC_BIG_ENDIAN);
 		offset += 1;
 
 		/* Return the number of bytes we have dissected */
